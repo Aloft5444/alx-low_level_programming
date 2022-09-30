@@ -1,15 +1,18 @@
 #include "main.h"
 /**
-* _strcmp -> function that compares two strings
-* @s1: first parameter
-* @s2: second parameter
-* Return: return an integer
-*/
+ * _strcmp - string to compare
+ * @s1: first string
+ * @s2: second string
+ *
+ * Return: value of string
+ */
 int _strcmp(char *s1, char *s2)
 {
-	int comp;
+	int i = 0;
 
-	comp = strcmp(s1, s2);
-	return (comp);
-
+	while (s1[i] - s2[i] == 0 && s1[i] != '\0')
+	{
+		i++;
+	}
+	return (s1[i] - s2[i]);
 }
