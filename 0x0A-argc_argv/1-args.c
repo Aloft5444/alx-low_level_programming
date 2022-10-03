@@ -1,18 +1,15 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
- * * main - print number of arguments entered
- * * @argc: number of arguments
- * * @argv: arguments entered
- * * Description: print number of arguments
- * * Return: return zero
- * */
-
-int main(int argc, char *argv[])
+ * main - Prints the number of arguments passed to it.
+ * @argc: The number of arguments supplied to the program.
+ * @argv: An array of pointers to the arguments.
+ *
+ * Return: Always 0.
+ */
+int main(int argc, char __attribute__((__unused__)) *argv[])
 {
-		printf("%d\n", argc - 1);
-			argv = argv;
+	printf("%d\n", argc - 1);
 
-				return (0);
+	return (0);
 }

@@ -1,54 +1,34 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 /**
- * * checkNum - verifies if string has only numbers
- * * @s: string to check
- * * Description: return 1 if only numbers in string, 0 if not
- * * Return: 1 if only numbers, 0 if not
- * */
-
-int checkNum(char *s)
+ * main - Prints the addition of positive numbers,
+ *        followed by a new line.
+ * @argc: The number of arguments passed to the program.
+ * @argv: An array of pointers to the arguments.
+ *
+ * Return: If one of the numbers contains symbols that are non-digits - 1.
+ *         Otherwise - 0.
+ */
+int main(int argc, char *argv[])
 {
-		int i;
+	int num, digit, sum = 0;
 
-			for (i = 0; s[i] != '\0'; i++)
-					{
-								if (s[i] < '0' || s[i] > '9')
-												return (0);
-									}
+	for (num = 1; num < argc; num++)
+	{
+		for (digit = 0; argv[num][digit]; digit++)
+		{
+			if (argv[num][digit] < '0' || argv[num][digit] > '9')
+			{
+				printf("Error\n");
 				return (1);
-}
+			}
+		}
 
-/**
- * * main - find least amount of coins needed for change
- * * @argc: number of parameters entered
- * * @argv: strings entered including file name
- * * Description: prints the minimum number of coins to make change
- * * Return: zero
- * */
+		sum += atoi(argv[num]);
+	}
 
-int main(int argc, char **argv)
-{
-		int sum, i;
+	printf("%d\n", sum);
 
-			sum = 0;
-
-				for (i = 1; i < argc; i++)
-						{
-									if (checkNum(argv[i]) == 0)
-												{
-																printf("Error\n");
-																			return (1);
-																					}
-											if (atoi(argv[i]) <= 0)
-														{
-																		printf("Error\n");
-																					return (1);
-																							}
-													sum += atoi(argv[i]);
-														}
-					printf("%d\n", sum);
-						return (0);
+	return (0);
 }
